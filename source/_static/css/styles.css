@@ -26,12 +26,20 @@ html {
   /* Colors */
   --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;
+  --gray-400: #9CA3AF;
+  --gray-450: #848B98;
+  --gray-475: #787F8C;
+  --gray-500: #6B7280;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
 }
 
 html[data-theme=light] {
   --pst-color-border: #e0e0e0;
   --pst-color-sidebar-tab-active: var(--gray-100);
   --pst-color-text-sidebar: var(--pst-color-text-muted);
+  /* --pst-color-text-secondary: var(--gray-475); */
+  --pst-color-text-muted: var(--gray-475);
   --pst-color-link-hover: var(--pst-color-info);
 }
 
@@ -39,6 +47,7 @@ html[data-theme=dark] {
   --pst-color-border: #404040;
   --pst-color-sidebar-tab-active: #404040;
   --pst-color-text-sidebar: var(--pst-color-text-muted);
+  --pst-color-text-secondary: var(--gray-700);
   --pst-color-link-hover: var(--pst-color-info);
 }
 
@@ -60,6 +69,14 @@ h3 {
 
 a {
   text-decoration: none;
+}
+
+code, pre, samp {
+  font-family: var(--pst-font-family-monospace);
+}
+
+kbd {
+  font-family: unset;
 }
 
 /* also contains table title */
@@ -115,7 +132,7 @@ thead {
 .bd-sidebar-primary {
   width: 20.313rem;
   padding: 2rem 0.5rem 1rem;
-
+  font-size: var(--pst-sidebar-font-size);
 }
 
 /* not sure why this initially had margin-top: auto, but it is causing undesirable scrollbar */
@@ -195,6 +212,49 @@ nav.bd-links .current > a::before {
 }
 
 /****************/
+/*    Navbar    */
+/****************/
+.bd-header .navbar-header-items__center {
+  display: none;
+}
+
+.bd-header .navbar-header-items {
+  flex-grow: 0;
+  width: unset;
+}
+
+/*****************/
+/* Navbar Search */
+/*****************/
+.bd-search {
+  border-radius: 8px;
+}
+
+.bd-search.nav-search input.form-control {
+  font-size: var(--pst-sidebar-font-size);
+}
+
+.bd-search input.form-control {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.438rem;
+  margin-top: 1px;
+}
+
+.bd-search svg {
+  color: var(--pst-color-text-muted);
+}
+
+.bd-search .search-button__kbd-shortcut {
+  font-size: var(--pst-font-size-small);
+  margin-inline-end: 0.25rem;
+}
+
+kbd:not(.compound) {
+  box-shadow: none;
+}
+
+/****************/
 /* Main content */
 /****************/
 .bd-main .bd-content .bd-article-container {
@@ -203,29 +263,38 @@ nav.bd-links .current > a::before {
   /* max-width: 100%;
   display: flex;
   align-items: center; */
+  padding: 2rem 3rem;
 }
 
-.bd-main .bd-content .bd-article-container > * {
+/* .bd-main .bd-content .bd-article-container > * {
+DO ONE FOR THE HEADER SEPARATELY
   max-width: 800px;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
+} */
 
-.header-article__inner {
-  padding: 1rem 0.45rem;
-}
-
-ul.bd-breadcrumbs{
-  font-size: var(--pst-sidebar-font-size);
+.bd-main .bd-content .bd-article-container .bd-article {
+  padding: 0;
 }
 
 .bd-main .bd-content .bd-article-container .bd-header-article {
   width: 100%;
 }
 
-.bd-main .bd-content .bd-article-container .bd-article {
-  padding: 1rem 2rem;
+.header-article__inner {
+  padding: 0 0.1rem;
 }
+
+ul.bd-breadcrumbs, ul.bd-breadcrumbs li.breadcrumb-item a, ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before {
+  font-size: var(--pst-sidebar-font-size);
+  color: var(--pst-color-text-muted);
+}
+
+ul.bd-breadcrumbs li.breadcrumb-item {
+  font-weight: 400;
+  font-size: var(--pst-sidebar-font-size);
+}
+
 
 /*********************/
 /* Secondary Sidebar */
@@ -235,7 +304,7 @@ ul.bd-breadcrumbs{
 }
 
 .sidebar-secondary-item {
-  padding-left: 0.5rem;
+  padding-left: 0.6rem;
 }
 
 .page-toc.tocsection.onthispage {
@@ -256,11 +325,12 @@ ul.bd-breadcrumbs{
   padding-bottom: 0;
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
-  margin-left: -0.5rem; /* to align the bars on secondary sidebar tab with vertical line */
+  margin-left: -0.6rem; /* to align the bars on secondary sidebar tab with vertical line */
+  line-height: 1.3;
 }
 
 .page-toc .toc-h2.nav-item.toc-entry a {
-  padding-left: 0.5rem;
+  padding-left: 0.6rem;
 }
 
 .page-toc .toc-h3.nav-item.toc-entry a {

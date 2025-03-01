@@ -19,7 +19,7 @@ myst_enable_extensions = [
   "colon_fence",
 ]
 
-templates_path = ['_templates']
+templates_path = ['_templates', '_templates/components', '_templates/sections']
 exclude_patterns = []
 
 
@@ -27,7 +27,7 @@ exclude_patterns = []
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 html_title = project
 html_theme = 'theme'
-html_theme_path = ["_themes"]
+html_theme_path = ["_themes", "_themes/theme"]
 html_static_path = ['_static']
 html_show_sourcelink = False
 
