@@ -38,7 +38,7 @@ dependencies) in a new or existing `requirements.txt` file.
 ## Conda Environment
 
 After downloading Miniconda (recommended) (see
-[Miniconda installation documentation](https://docs.anaconda.com/miniconda/install/))
+[Miniconda installation documentation](https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions))
 or Anaconda (see [Anaconda download page](https://www.anaconda.com/download)),
 launch the Miniconda or Anaconda prompt.
 
