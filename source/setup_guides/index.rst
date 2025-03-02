@@ -6,3 +6,4 @@ Setup Guides
 
    python_environments.md
    python_packages.md
+   cloud_services/index.rst

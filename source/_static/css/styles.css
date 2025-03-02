@@ -15,9 +15,9 @@ html {
   --pst-font-size-h1: 220%;
   --pst-font-size-h2: 170%;
   --pst-font-size-h3: 130%;
-  --pst-font-size-h4: 130%;
-  --pst-font-size-h5: 120%;
-  --pst-font-size-h6: 110%;
+  --pst-font-size-h4: 120%;
+  --pst-font-size-h5: 110%;
+  --pst-font-size-h6: 100%;
   --pst-font-size-small: 0.889rem;
   --pst-font-weight-heading: 700;
   --pst-sidebar-secondary: 18rem;
@@ -64,6 +64,11 @@ h2 {
 
 h3 {
   margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+h4 {
+  margin-top: 1.2rem;
   margin-bottom: 0.6rem;
 }
 
