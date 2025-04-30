@@ -1,4 +1,4 @@
-# Python Environments
+# Python Environments Setup
 
 The following is a guide for setting up your Python development environment.
 
@@ -38,7 +38,7 @@ dependencies) in a new or existing `requirements.txt` file.
 ## Conda Environment
 
 After downloading Miniconda (recommended) (see
-[Miniconda installation documentation](https://docs.anaconda.com/miniconda/install/))
+[Miniconda installation documentation](https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions))
 or Anaconda (see [Anaconda download page](https://www.anaconda.com/download)),
 launch the Miniconda or Anaconda prompt.
 
@@ -78,7 +78,7 @@ some conflicts may arise if order of steps is not observed.
    ```
 
    This allows you to use such command as `conda develop` which adds paths to
-   the Python path.
+   the Python path and to create Conda packages from pip packages.
 
 4. Add any directories in which you want the Python interpreter to search for
    local packages using
@@ -87,20 +87,19 @@ some conflicts may arise if order of steps is not observed.
    conda develop <path_to_local_package_dir>
    ```
 
-5. If using Miniconda, install pip using;
+5. If not installed already, install pip using;
 
    ```
-
    conda install pip
-
    ```
 
-6. If required, install CUDA and cuDNN using:
+6. If required, install CUDA and cuDNN. Have a look at
+   [Docker Hub PyTorch tags](https://hub.docker.com/r/pytorch/pytorch/tags),
+   [Docker Hub TensorFlow tags](https://hub.docker.com/r/tensorflow/tensorflow/tags)
+   etc. for combinations of versions which work well together:
 
    ```
-
    conda install cuda=xx.x cudnn=x.xx -c nvidia
-
    ```
 
    ```{note}
