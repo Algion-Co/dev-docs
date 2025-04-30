@@ -119,11 +119,34 @@ thead {
   border-bottom: 1px solid var(--pst-color-border);
 }
 
+/********/
 /* Page */
+/********/
 @media (min-width: 960px){
-  .bd-page-width {
+  /* .bd-page-width {
     max-width: 120rem;
+  } */
+
+  section {
+    /* max-width: 60rem; */
+    background-color: red;
   }
+} 
+
+.bd-main .bd-content .bd-article-container {
+  max-width: unset;
+}
+
+/*************/
+/* Main Page */
+/*************/
+section#documentation {
+  width: 100vw;
+  height: 50vh;
+  background: blue;
+  position: relative;
+  top: 0;
+  max-width: 200rem;
 }
 
 /***********/

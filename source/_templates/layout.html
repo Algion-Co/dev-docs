@@ -4,7 +4,7 @@
 {% set html_tag %}
 <html{% if not html5_doctype %} xmlns="http://www.w3.org/1999/xhtml"{% endif %}{% if language is not none %} lang="{{ language }}"{% endif %} data-content_root="{{ content_root }}" {% if default_mode %}data-theme="{{ default_mode }}"{% endif %}>
 {% endset %}
-{%- extends "basic/layout.html" %}
+{% if meta and meta.page_template %}{% extends meta.page_template %}{% else %}{% extends "!layout.html" %}{% endif -%}
 {%- import "static/webpack-macros.html" as _webpack with context %}
 {# A flag for whether we include a secondary sidebar based on the page metadata #}
 {# Note: secondary_sidebar_items is an array set by set_secondary_sidebar_items() in utils.py #}
