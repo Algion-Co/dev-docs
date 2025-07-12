@@ -134,7 +134,7 @@ thead {
 
   section {
     /* max-width: 60rem; */
-    background-color: red;
+    /* background-color: red; */
   }
 } 
 
@@ -148,7 +148,7 @@ thead {
 section#documentation {
   width: 100vw;
   height: 50vh;
-  background: blue;
+  /* background: blue; */
   position: relative;
   top: 0;
   max-width: 200rem;
