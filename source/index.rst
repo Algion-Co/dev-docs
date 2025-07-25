@@ -4,38 +4,25 @@
    contain the root `toctree` directive.
 
 :html_theme.sidebar_secondary.remove:
-Documentation
-=============
 
-Developer Documentation
-=======================
-
-.. toctree::
-    :maxdepth: 1
-
-    tech_stacks/index.rst
-    setup_guides/index.rst
-    standards/index.rst
-    troubleshooting/index.rst
-   
-
-Specific Topics
-===============
-
-.. toctree::
-    :maxdepth: 1
+.. raw:: html
     
-    specific_topics/python/index.rst
-    specific_topics/ai_ml/index.rst
-    specific_topics/dev_ops/index.rst
-   
+    <h1>ABC Documentation</h1>
+    <p>Help for wherever you are at ABC</p>
+
+.. grid:: 1 2 3 4
+
+    .. grid-item-card:: Developer Documentation
+
+        .. toctree::
+            :maxdepth: 1
+
+            standards/index.rst
+            setup_guides/index.rst
+            resources/index.md
+            tech_stacks/index.rst
+            troubleshooting/index.rst
+
 
 .. TODO:
 .. - Templates page sectioned for report templates, config file, Gitignore, README templates etc.
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
