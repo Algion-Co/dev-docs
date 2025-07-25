@@ -1,6 +1,6 @@
 # Python Stack
 
-## Development Platforms
+## Development Platforms and Other Stuff to Make it Wrap
 
 ### Jupyter Lab/Notebook
 

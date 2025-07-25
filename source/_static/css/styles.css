@@ -11,6 +11,9 @@
 }
 
 html {
+  /* prevent width from changing on different pages */
+  width: 100vw;
+
   --pst-font-family-base-system: Helvetica, Arial, Segoe UI, sans-serif;
   --pst-font-size-h1: 220%;
   --pst-font-size-h2: 170%;
@@ -37,7 +40,7 @@ html {
 html[data-theme=light] {
   --pst-color-border: #e0e0e0;
   --pst-color-sidebar-tab-active: var(--gray-100);
-  --pst-color-text-sidebar: var(--pst-color-text-muted);
+  /*--pst-color-text-sidebar: var(--pst-color-text-base);*/
   /* --pst-color-text-secondary: var(--gray-475); */
   --pst-color-text-muted: var(--gray-475);
   --pst-color-link-hover: var(--pst-color-info);
@@ -50,7 +53,6 @@ html[data-theme=dark] {
   --pst-color-text-secondary: var(--gray-700);
   --pst-color-link-hover: var(--pst-color-info);
 }
-
 
 h1 {
   margin-top: 1rem;
@@ -189,7 +191,10 @@ nav.bd-links li>a {
   padding: var(--sidebar-tabs-padding-top-bottom) 16px;
   color: var(--pst-color-text-sidebar);
   border-radius: 6px;
-  margin-bottom: 3px;
+  
+  /* ensure consistent margins for all sidebar items */
+  margin-right: 0px;
+  margin-bottom: 3px !important;
 }
 
 /* style of selected (current) tab whose child of tab is also selected */
