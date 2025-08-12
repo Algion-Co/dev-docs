@@ -42,15 +42,15 @@ db:
 ```
 
 ```python
-# main.py
+# config.py
 
 # Standard Library
 from typing import Optional
 
 # Third-Party Libraries
-import yaml
 from pydantic import BaseModel, Field
 from pydantic_settings import BaseSettings
+
 
 class DBConfig(BaseModel):
     url: str
@@ -61,7 +61,16 @@ class AppConfig(BaseSettings):
     an_environment_variable_item: str = Field(alias="MY_ENVIRONMENT_VAR")
     an_item_with_a_default_value: Optional[int] = 123
     db: DBConfig
+```
 
+```python
+# main.py
+
+# Third-Party Libraries
+import yaml
+
+# Local Library
+from config import AppConfig
 
 def main():
     with open("config.yaml", "r") as f:
@@ -72,6 +81,9 @@ def main():
     print(config.an_item_with_a_default_value)
     print(config.db.url)
     print(dict(config.db))
+
+if __name__ == "__main__":
+    main()
 ```
 
 <!--
