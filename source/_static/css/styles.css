@@ -11,6 +11,9 @@
 }
 
 html {
+  /* prevent width from changing on different pages */
+  width: 100vw;
+
   --pst-font-family-base-system: Helvetica, Arial, Segoe UI, sans-serif;
   --pst-font-size-h1: 220%;
   --pst-font-size-h2: 170%;
@@ -18,6 +21,7 @@ html {
   --pst-font-size-h4: 120%;
   --pst-font-size-h5: 110%;
   --pst-font-size-h6: 100%;
+  --pst-font-size-base: 1rem;
   --pst-font-size-small: 0.889rem;
   --pst-font-weight-heading: 700;
   --pst-sidebar-secondary: 18rem;
@@ -36,21 +40,23 @@ html {
 
 html[data-theme=light] {
   --pst-color-border: #e0e0e0;
-  --pst-color-sidebar-tab-active: var(--gray-100);
-  --pst-color-text-sidebar: var(--pst-color-text-muted);
+  --pst-color-bg-sidebar-tab-active: var(--gray-100);
+  --pst-color-primary: var(--pst-color-info);
+  --pst-color-secondary: var(--pst-color-info);
+  --pst-color-accent: var(--pst-color-primary);
+  /*--pst-color-text-sidebar: var(--pst-color-text-base);*/
   /* --pst-color-text-secondary: var(--gray-475); */
-  --pst-color-text-muted: var(--gray-475);
+  --pst-color-text-muted: var(--gray-500);
   --pst-color-link-hover: var(--pst-color-info);
 }
 
 html[data-theme=dark] {
   --pst-color-border: #404040;
-  --pst-color-sidebar-tab-active: #404040;
+  --pst-color-bg-sidebar-tab-active: #404040;
   --pst-color-text-sidebar: var(--pst-color-text-muted);
   --pst-color-text-secondary: var(--gray-700);
   --pst-color-link-hover: var(--pst-color-info);
 }
-
 
 h1 {
   margin-top: 1rem;
@@ -76,12 +82,20 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 code, pre, samp {
   font-family: var(--pst-font-family-monospace);
 }
 
 kbd {
   font-family: unset;
+}
+
+.toctree-wrapper .toctree-l1>a {
+  font-size: var(--pst-font-size-base) !important;
 }
 
 /* also contains table title */
@@ -154,6 +168,26 @@ section#documentation {
   max-width: 200rem;
 }
 
+/******************/
+/* Home Main Page */
+/******************/
+html[data-theme=light] .docs-section-card .sd-shadow-lg, html[data-theme=light] .docs-section-card .sd-shadow-md, html[data-theme=light] .docs-section-card .sd-shadow-sm, html[data-theme=light] .docs-section-card .sd-shadow-xs {
+  box-shadow: none !important;
+  border: none;
+}
+
+.docs-section-card {
+  padding-left: 0 !important;
+}
+
+.docs-section-card .sd-card-body {
+  padding: 0;
+}
+
+.docs-section-card .sd-card-title {
+  font-size: var(--pst-font-size-h3);
+}
+
 /***********/
 /* Sidebar */
 /***********/
@@ -189,7 +223,10 @@ nav.bd-links li>a {
   padding: var(--sidebar-tabs-padding-top-bottom) 16px;
   color: var(--pst-color-text-sidebar);
   border-radius: 6px;
-  margin-bottom: 3px;
+  
+  /* ensure consistent margins for all sidebar items */
+  margin-right: 0px;
+  margin-bottom: 3px !important;
 }
 
 /* style of selected (current) tab whose child of tab is also selected */
@@ -212,7 +249,7 @@ nav.bd-links li.toctree-l3>a {
 nav.bd-links li>a:hover, nav.bd-links li.current:has(ul.current) > a:hover {
   color: var(--pst-color-text-sidebar);
   text-decoration: none;
-  background-color: var(--pst-color-sidebar-tab-active);
+  background-color: var(--pst-color-bg-sidebar-tab-active);
 }
 
 nav.bd-links li.current:has(ul.current) > a::before {
@@ -223,7 +260,7 @@ nav.bd-links li.current:has(ul.current) > a::before {
 nav.bd-links .current>a {
   position: relative; /* required to position the pseudo-element relative to the parent */
   box-shadow: none;
-  background-color: var(--pst-color-sidebar-tab-active);
+  background-color: var(--pst-color-bg-sidebar-tab-active);
   color: var(--pst-color-text-sidebar);
 }
 
@@ -282,6 +319,10 @@ kbd:not(.compound) {
   box-shadow: none;
 }
 
+:focus-visible .bd-search {
+  border: none !important;
+}
+
 /****************/
 /* Main content */
 /****************/
@@ -291,7 +332,7 @@ kbd:not(.compound) {
   /* max-width: 100%;
   display: flex;
   align-items: center; */
-  padding: 2rem 3rem;
+  padding: 2rem 4rem;
 }
 
 /* .bd-main .bd-content .bd-article-container > * {
@@ -371,4 +412,8 @@ ul.bd-breadcrumbs li.breadcrumb-item {
 
 .page-toc .toc-h5.nav-item.toc-entry a {
   padding-left: 7.8125rem; /*toc-h3 padding * 2.5 */
+}
+
+.toc-entry a.nav-link.active {
+  color: var(--pst-color-text-base);
 }
