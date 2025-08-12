@@ -5,23 +5,27 @@
 
 :html_theme.sidebar_secondary.remove:
 
+.. title:: Documentation
+
 .. raw:: html
     
-    <h1>ABC Documentation</h1>
+    <h1>Documentation</h1>
     <p>Help for wherever you are at ABC</p>
 
 .. grid:: 1 2 3 4
 
-    .. grid-item-card:: Developer Documentation
+    .. rst-class:: docs-section-card
 
-        .. toctree::
-            :maxdepth: 1
+        .. grid-item-card:: Developer Documentation
 
-            standards/index.rst
-            setup_guides/index.rst
-            resources/index.md
-            tech_stacks/index.rst
-            troubleshooting/index.rst
+            .. toctree::
+                :maxdepth: 1
+
+                standards/index.rst
+                setup_guides/index.rst
+                resources/index.md
+                tech_stacks/index.rst
+                troubleshooting/index.rst
 
 
 .. TODO:
