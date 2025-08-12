@@ -26,6 +26,7 @@ html {
   --pst-font-weight-heading: 700;
   --pst-sidebar-secondary: 18rem;
   --sidebar-tabs-padding-top-bottom: 6px;
+  --pst-breadcrumb-divider: "/";
 
   /* Colors */
   --gray-100: #f3f4f6;
@@ -364,6 +365,13 @@ ul.bd-breadcrumbs li.breadcrumb-item {
   font-size: var(--pst-sidebar-font-size);
 }
 
+ul.bd-breadcrumbs li.breadcrumb-item a[aria-label="Home"] svg {
+  display: none;
+}
+
+ul.bd-breadcrumbs li.breadcrumb-item a[aria-label="Home"]::after {
+  content: "Home";
+}
 
 /*********************/
 /* Secondary Sidebar */
