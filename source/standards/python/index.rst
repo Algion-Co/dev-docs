@@ -22,11 +22,8 @@ Python Coding Standard
 .. include:: mixins.md
     :parser: myst_parser.sphinx_
 
+.. include:: configuration.md
+    :parser: myst_parser.sphinx_
+
 .. TODO:
 .. - Local package using pip first then submodules
-
-.. toctree::
-    :maxdepth: 1
-
-    test1.rst
-    test2.rst
