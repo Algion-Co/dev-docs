@@ -1,0 +1,652 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python Environments Setup &#8212; Developer Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=3320a2fc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'setup_guides/python_environments';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="python_packages.html" />
+    <link rel="prev" title="Setup Guides" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search docs"
+         aria-label="Search docs"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Developer Documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../standards/index.html">
+    Standards
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Setup Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../resources/index.html">
+    Resources
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tech_stacks/index.html">
+    Tech Stacks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../troubleshooting/index.html">
+    Troubleshooting
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<form class="bd-search d-flex align-items-center nav-search"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search docs"
+         aria-label="Search docs"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+<!-- 
+Replaced the original code below:
+
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button> -->
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<form class="bd-search d-flex align-items-center nav-search"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search docs"
+         aria-label="Search docs"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+<!-- 
+Replaced the original code below:
+
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button> -->
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../standards/index.html">
+    Standards
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Setup Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../resources/index.html">
+    Resources
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tech_stacks/index.html">
+    Tech Stacks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../troubleshooting/index.html">
+    Troubleshooting
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Environments Setup</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="infrastructure/index.html">Infrastructure Setup</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="infrastructure/label_studio.html">Label Studio Setup</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="cloud_services/index.html">Cloud Services Setup Guides</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="cloud_services/gpu_instances.html">GPU Instance Setup</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Setup Guides</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python Environments Setup</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="python-environments-setup">
+<h1>Python Environments Setup<a class="headerlink" href="#python-environments-setup" title="Link to this heading">#</a></h1>
+<p>The following is a guide for setting up your Python development environment.</p>
+<p>You may need to refer to the <a class="reference internal" href="#"><span class="xref myst">Tech Stacks</span></a> pages if unfamiliar with the
+platforms discussed or for clarity on why they are our standards.</p>
+<section id="virtual-environment">
+<h2>Virtual Environment<a class="headerlink" href="#virtual-environment" title="Link to this heading">#</a></h2>
+<p>To create a virtual environment, run the command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">&lt;</span><span class="n">virtual_environment_dir_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>For the virtual environment directory name, use one of the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.venv</span></code> (recommended)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.env</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">venv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">env</span></code></p></li>
+</ul>
+<p>These are the standards that will be included in ignore files such as
+<code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.</p>
+<p>Activate your virtual environment and install Python packages.</p>
+<p>If available for a particular project, you can install packages from a
+<code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file, using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="o">&lt;</span><span class="n">path_to_requirements</span><span class="o">.</span><span class="n">txt_file</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Note down each new package you install and its version (excluding its
+dependencies) in a new or existing <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file.</p>
+</section>
+<section id="conda-environment">
+<h2>Conda Environment<a class="headerlink" href="#conda-environment" title="Link to this heading">#</a></h2>
+<p>After downloading Miniconda (recommended) (see
+<a class="reference external" href="https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions">Miniconda installation documentation</a>)
+or Anaconda (see <a class="reference external" href="https://www.anaconda.com/download">Anaconda download page</a>),
+launch the Miniconda or Anaconda prompt.</p>
+<p>Follow steps below to configure a new environment from scratch or configure an
+environment from environment files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Follow the steps in the given order as some steps depend on previous ones and
+some conflicts may arise if order of steps is not observed.</p>
+</div>
+<section id="setting-up-conda-environment-from-scratch">
+<h3>Setting Up Conda Environment from Scratch<a class="headerlink" href="#setting-up-conda-environment-from-scratch" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Create an Conda environment using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="o">&lt;</span><span class="n">environment</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">python</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="p">[</span><span class="n">space</span><span class="o">-</span><span class="n">separated</span><span class="o">-</span><span class="n">packages</span><span class="p">]</span>
+
+</pre></div>
+</div>
+<p>The environment name should be kebab case.</p>
+</li>
+<li><p>Activate your new environment using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="o">&lt;</span><span class="n">environment</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>If using Miniconda, install conda-build using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">build</span>
+
+</pre></div>
+</div>
+<p>This allows you to use such command as <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">develop</span></code> which adds paths to
+the Python path and to create Conda packages from pip packages.</p>
+</li>
+<li><p>Add any directories in which you want the Python interpreter to search for
+local packages using</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">develop</span> <span class="o">&lt;</span><span class="n">path_to_local_package_dir</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>If not installed already, install pip using;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pip</span>
+</pre></div>
+</div>
+</li>
+<li><p>If required, install CUDA and cuDNN. Have a look at
+<a class="reference external" href="https://hub.docker.com/r/pytorch/pytorch/tags">Docker Hub PyTorch tags</a>,
+<a class="reference external" href="https://hub.docker.com/r/tensorflow/tensorflow/tags">Docker Hub TensorFlow tags</a>
+etc. for combinations of versions which work well together:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">cuda</span><span class="o">=</span><span class="n">xx</span><span class="o">.</span><span class="n">x</span> <span class="n">cudnn</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">xx</span> <span class="o">-</span><span class="n">c</span> <span class="n">nvidia</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ensure that the versions you are installing are compatible with:</p>
+<ol class="arabic simple">
+<li><p>The specific version of the deep learning framework you would like to use</p></li>
+<li><p>The specific version of any SDK you might intend to use e.g. TensorRT
+(which in turn depends on the GPU architecture you are using)</p></li>
+</ol>
+</div>
+</li>
+<li><p>Install Python packages <strong>using pip where possible</strong>. If available, you can
+also install packages from a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file, using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="o">&lt;</span><span class="n">path_to_requirements</span><span class="o">.</span><span class="n">txt_file</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>We use pip instead of Conda albeit installing into Conda environments
+because:</p>
+<ul class="simple">
+<li><p>it offers the most up-to-date packages</p></li>
+<li><p>there are several cases where Python packages are available via pip but not
+Conda</p></li>
+<li><p>when you have to use pip for the aforementioned reasons, mixing pip
+packages with Conda packages can result in conflicts and other strange
+things</p></li>
+<li><p>packages can easily be installed via <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> files</p></li>
+<li><p>it makes the environment somewhat reproducible in a virtual environment</p></li>
+</ul>
+</li>
+<li><p>If you intend to use Jupyter</p>
+<ol class="arabic">
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ipykernel</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create a new kernel using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ipython</span> <span class="n">kernel</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">name</span><span class="o">=&lt;</span><span class="nb">any</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">kernel</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The kernel name should be kebab case.</p>
+</li>
+</ol>
+<!--
+TODO:
+- Discussion of conda channels?
+-->
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Setup Guides</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="python_packages.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-environment">Conda Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-conda-environment-from-scratch">Setting Up Conda Environment from Scratch</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Thomas Gwasira.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
